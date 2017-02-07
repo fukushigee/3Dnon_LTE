@@ -31,7 +31,9 @@
 # fukushige
 *.data
 getspectrum/sp*
+getspectrum/*.f90
 data3/
 fuku*
 test*
 pma0129_nonlte128.data
+*.f90

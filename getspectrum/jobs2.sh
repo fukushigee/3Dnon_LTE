@@ -8,7 +8,7 @@
 source /opt/modules/default/init/bash
 module switch PrgEnv-cray PrgEnv-intel
 
-cd /work/fukushigers/nonlte2/getspectrum
+cd /work/fukushigers/testt/getspectrum
 make -f makefile_spect clean
 make -f makefile_spect
 

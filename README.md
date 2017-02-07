@@ -81,6 +81,6 @@ Circinus galaxyのRadiation driven fountain modelをもとに、molecular line�
 
 - main7.8.Fを実行するとgetspectrum/に00*nlev.dが出力される
 
--getspectrum/getspectrum14*.Fを実行するとspnlev.b(積分強度)、sp*.cube(チャンネルマップ)等が出力される
+-getspectrum/getspectrum14*.Fを実行するとspnlev.b(積分強度)、sp*.cube(チャンネルマップ)が出力される
 
 -出力データと流体データ(pma0129_nonlte128.data)は容量が100MBを越えることがあるのでgitでaddしてはいけない

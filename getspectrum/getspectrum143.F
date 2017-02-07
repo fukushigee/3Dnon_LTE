@@ -431,23 +431,6 @@
             close(12+lev)
         enddo
 
-!1/16fukushige!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            open(fi, file='sp.fuku')
-            open(fi+1, file='deg85lev2.fuku')
-            open(fi+4, file='deg85lev4.fuku')
-            open(fi+5, file='deg85lev5.fuku')
-        do mvel=1, mvelmax !velocity bin
-             velo = (rad_v(1)/1.e5)+(mvel-1.d0)*(dv/1.e5)
-             write(fi,*)mvel,int(velo),TBcube(64,64,mvel,1)
-             write(fi+1,*)mvel,int(velo),TBcube(64,64,mvel,2)
-             write(fi+4,*)mvel,int(velo),TBcube(64,64,mvel,4)
-             write(fi+5,*)mvel,int(velo),TBcube(64,64,mvel,5)
-        enddo
-            close(fi)
-            close(fi+1)
-            close(fi+4)
-            close(fi+5)
-!1/16fukushige!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
       end subroutine integ
         

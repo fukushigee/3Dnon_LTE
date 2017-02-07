@@ -20,17 +20,17 @@
 !#define SPECT 'data1/sp'
 !#define LEVD 'data2/001nlev.d'
 !#define SPECT 'data2/sp'
-!#endif
+!!#endif
 
 #ifdef ALPHA
 #define NG 128
 #define NGZ 128 
-#define NRAY 800
-#define LEVMAX 10 
+#define NRAY 10
+#define LEVMAX 5 
 #define VIEWANGLE 85
 #define NCHANNEL 50
 #define DELTAV 5.0d5
-#define LEVD '008nlev.d'
+#define LEVD '005nlev.d'
 !#define LEVD '008nlev_hcn.d'
 #define SPECT 'sp'
 #define INTENSITY 'intensity'

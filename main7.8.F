@@ -23,7 +23,7 @@
 !#define INFILENAME 'agn_input3.data'
 #define INFILENAME 'pma0129_nonlte128.data'
 !#define DATADIR 'data3'
-#define NRAY 500
+#define NRAY 10
 #define LOOPMAX 5
 !#define CCOEFF 'CO12_test.dat'
 #define CCOEFF 'CO-H2para.dat'
@@ -36,8 +36,8 @@
 !#define CCOEFF 'SiO_reform.dat'
 !#define CCOEFF 'HNC.dat'
 #endif
-#define NRAY0 500
-#define LEVMAX 10
+#define NRAY0 10
+#define LEVMAX 5
 #define TABLEMIN 1
 !# TABLEMAX = 15(HCO+) 14(HCN, HNC, CO12, CO13) 13(SiO, reform)
 !#define TABLEMAX 14
@@ -268,12 +268,9 @@
       end select
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       Loop=1
-      open(readn32,file='level3-2.d')
       open(readn98,file='level9-8.d')
 
       do Loop=1,Loopmax
-
-      write(readn32,*),loop,n(2,64,44,64)
 
       write(readn98,*),loop,n(8,64,44,64)
 
@@ -306,8 +303,6 @@
 
       end do  ! end loop
       
-      close(readn32)
-
       close(readn98)
 
       
@@ -426,7 +421,6 @@
       print*,'max, min vx()', maxval(vx), minval(vx)
       print*,'max, min vy()', maxval(vy), minval(vy)
       print*,'max, min vz()', maxval(vz), minval(vz)
-      !print*,'n(H2)(64,44,64)',rho(65,45,65)
 #endif
       end subroutine read_data
 
