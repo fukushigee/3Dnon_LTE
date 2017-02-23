@@ -343,24 +343,6 @@
             close(12+lev)
          enddo
 
-!1/16fukushige!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            open(fi, file='deglev1.fuku')
-            open(fi+2, file='deglev2.fuku')
-            open(fi+3, file='deglev3.fuku')
-            open(fi+4, file='deglev4.fuku')
-        do mvel=1, mvelmax !velocity bin
-             velo = (rad_v(1)/1.e5)+(mvel-1.d0)*(dv/1.e5)
-             write(fi,*)mvel,int(velo),TBcube(64,64,mvel,1)
-             write(fi+2,*)mvel,int(velo),TBcube(64,64,mvel,2)
-             write(fi+3,*)mvel,int(velo),TBcube(64,64,mvel,3)
-             write(fi+4,*)mvel,int(velo),TBcube(64,64,mvel,4)
-        enddo
-            close(fi)
-            close(fi+2)
-            close(fi+3)
-            close(fi+4)
-!1/16fukushige!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
       end subroutine integ
 
 
@@ -400,6 +382,14 @@
         TBI=0d0
         TBI2=0d0
         do mvel=1,mvelmax  !velocity
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           if(Intensity(mvel,lev)== BG(lev)) then
+                 Intensity(mvel,lev)=0d0
+            endif
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
             TB(mvel)=Intensity(mvel,lev)/cT2I(lev)  ! I=(2 nu^2/c^2) kT
             !TBI2=TBI2+TB(mvel)*dv/1d5                 ! TBI=\int TB dv
             TBI2=TBI2+(TB(mvel)+TB(mvel-1))*(dv/1d5)*0.5d0
